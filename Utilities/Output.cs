@@ -27,4 +27,25 @@ namespace Utilities
                 System.Diagnostics.Debug.WriteLine("\t" + item);
         }
     }
+
+    public class Assert
+    {
+        public static void Check(string a, string b)
+        {
+            if (a != b)
+                throw new Exception("Assert failed");
+        }
+        public static void CheckLen(string a, int b)
+        {
+            if (a.Length != b)
+                throw new Exception("Assert failed");
+        }
+
+        public static void PrintCollection<T>(string label, IEnumerable<T> source)
+        {
+            System.Diagnostics.Debug.WriteLine(label);
+            foreach (T item in source)
+                System.Diagnostics.Debug.WriteLine("\t" + item);
+        }
+    }
 }
